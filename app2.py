@@ -11,7 +11,7 @@ import google.generativeai as genai
 app = FastAPI()
 
 # Initialize Google Gemini API key
-os.environ["GEMINI_API_KEY"] = "AIzaSyAmO8oSD-53UPHMp42IYgFW0MqDJbd6zcs"
+os.environ["GEMINI_API_KEY"] = "enter your api key "
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 
 # Initialize Milvus connection
