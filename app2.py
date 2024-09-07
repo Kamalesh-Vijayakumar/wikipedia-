@@ -1,20 +1,20 @@
-from pymilvus import connections, FieldSchema, CollectionSchema, DataType, Collection, utility
+from pymilvus import connections, FieldSchema, CollectionSchema, DataType, Collection, utility #langchain vectors can be used 
 from langchain_huggingface import HuggingFaceEmbeddings
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup #Langchain wikiloader can be used 
 import requests
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import os
-import google.generativeai as genai
+import google.generativeai as genai #langchain geminillm can be use 
 
-# Initialize FastAPI app
+# FastAPI Initialization
 app = FastAPI()
 
-# Initialize Google Gemini API key
+# Initialize  Gemini API key
 os.environ["GEMINI_API_KEY"] = "enter your api key "
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 
-# Initialize Milvus connection
+# Initialize  connection in me+ilvus
 connections.connect("default", host="localhost", port="19530")
 
 # Define the collection schema and create the collection in Milvus (set dim=384)
